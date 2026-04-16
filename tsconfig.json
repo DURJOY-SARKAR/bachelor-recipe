@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "components/ingredient-input.jsx", "app/page.jsx", "components/recipe-match.jsx"  ],
   "exclude": [
     "node_modules"
   ]

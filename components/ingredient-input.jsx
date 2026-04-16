@@ -42,6 +42,7 @@ export const IngredientInput = ({ user, onLogout, onViewSaved, onFindRecipes }) 
 
   // remove ingredient
   const removeIngredient = (item) => {
+    console.log("cross")
     const updated = ingredients.filter((i) => i !== item)
     setIngredients(updated)
     localStorage.setItem("recipeGenieIngredients", JSON.stringify(updated))
@@ -182,15 +183,23 @@ export const IngredientInput = ({ user, onLogout, onViewSaved, onFindRecipes }) 
 
                 <div className="flex flex-wrap gap-2 mt-4">
                   {ingredients.map((item) => (
-                    <Badge key={item}>
+
+                    <p className="  px-2 rounded-md py-2 bg-amber-800 text-white">
                       {item}
-                      <X
-                        className="ml-2 w-3 h-3 cursor-pointer"
-                        onClick={() => removeIngredient(item)}
-                      />
-                    </Badge>
+                      <span  onClick={() => removeIngredient(item)} className="ml-2 border-2 border-red-800 rounded-full px-2 cursor-pointer">X</span>
+                    </p>
+
                   ))}
                 </div>
+
+                {/* <Badge key={item}>
+                  {item}
+                  <X
+                    className="ml-2 w-5 h-5 cursor-pointer"
+                    onClick={() => removeIngredient(item)}
+                  />
+                </Badge> */}
+
 
                 {ingredients.length >= 2 && (
                   <Button
